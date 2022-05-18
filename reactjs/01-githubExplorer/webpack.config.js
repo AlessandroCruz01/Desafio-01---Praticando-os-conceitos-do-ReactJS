@@ -10,7 +10,7 @@ module.exports = {
     devtool: isDevelopment? 'eval-source-map' : 'source-map',
 
     //arquivo de entrada
-    entry: path.resolve(__dirname, 'src', 'index.jsx'), 
+    entry: path.resolve(__dirname, 'src', 'index.tsx'), 
 
     //arquivo de saida (minificado)
     output: { 
@@ -20,7 +20,7 @@ module.exports = {
 
     //extensoes
     resolve: { 
-        extensions: ['.js', '.jsx']
+        extensions: ['.js', '.jsx', 'ts', 'tsx']
     },
 
     devServer: {
@@ -43,7 +43,7 @@ module.exports = {
         rules: [
             {
                 //regras pra arquivos JS
-                test: /\.jsx$/,
+                test: /\.(j|t)sx$/,
                 exclude: /node_modules/,
                 use: {
                     loader: 'babel-loader',
