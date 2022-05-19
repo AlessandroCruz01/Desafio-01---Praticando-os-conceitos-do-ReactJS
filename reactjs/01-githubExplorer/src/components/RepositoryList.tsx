@@ -12,7 +12,13 @@ const rep = {
 
 export function RepositoryList() {
 
-    const [repositorios , setRepositorios ] = useState([])
+    interface Repository {
+        name: string,
+        description: string,
+        html_url: string
+    }
+
+    const [repositorios , setRepositorios ] = useState<Repository[]>([])
 
     useEffect(() => {
         fetch('https://api.github.com/orgs/rocketseat/repos')
@@ -21,7 +27,7 @@ export function RepositoryList() {
     }, [])
 
     return(
-        <section class="repository-list ">
+        <section className="repository-list ">
             <h1>Lista de repositórios</h1>
 
             <ul>
