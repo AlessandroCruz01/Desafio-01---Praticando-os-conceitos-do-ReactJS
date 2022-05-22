@@ -20,7 +20,7 @@ module.exports = {
 
     //extensoes
     resolve: { 
-        extensions: ['.js', '.jsx', 'ts', 'tsx']
+        extensions: ['.js', '.jsx', '.ts', '.tsx']
     },
 
     devServer: {
@@ -43,7 +43,7 @@ module.exports = {
         rules: [
             {
                 //regras pra arquivos JS
-                test: /\.(j|t)sx$/,
+                test: /\.(t|j)sx$/,
                 exclude: /node_modules/,
                 use: {
                     loader: 'babel-loader',
