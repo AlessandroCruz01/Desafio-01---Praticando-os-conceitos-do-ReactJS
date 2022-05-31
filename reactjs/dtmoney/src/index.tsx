@@ -1,7 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import { createServer, Model } from 'miragejs';
-import { request } from 'http';
 import { App } from './App';
 
 createServer({
@@ -25,9 +24,9 @@ createServer({
         {
           id: 2,
           title: 'Freela',
-          type: 'deposit',
+          type: 'withdraw',
           category: 'Dev',
-          amount: 6000,
+          amount: 5000,
           createdAt: new Date(),
         },
       ],

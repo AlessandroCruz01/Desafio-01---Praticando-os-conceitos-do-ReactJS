@@ -32,7 +32,8 @@
         "react/prop-types":"off",
         "quotes":"off",
         "no-unused-vars":"off",
-        "no-shadow": "off"
+        "no-shadow": "off",
+        "react/jsx-no-constructed-context-values":"off"
 
     }
 }
