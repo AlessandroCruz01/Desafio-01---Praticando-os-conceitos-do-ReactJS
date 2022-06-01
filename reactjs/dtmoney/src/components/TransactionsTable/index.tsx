@@ -1,8 +1,11 @@
+/* eslint-disable no-underscore-dangle */
+import { MdOutlineDeleteForever } from 'react-icons/md';
 import { useTransactions } from '../../hooks/useTransactions';
 import { Container } from './styles';
 
 export const TransactionsTable: React.FC = () => {
-  const { transactions } = useTransactions();
+  const { transactions, deleteTransaction } = useTransactions();
+
   return (
     <Container>
       <table>
@@ -18,7 +21,9 @@ export const TransactionsTable: React.FC = () => {
         <tbody>
 
           {transactions.map((transaction) => (
-            <tr key={transaction.title}>
+
+            // eslint-disable-next-line no-underscore-dangle
+            <tr key={transaction._id}>
               <td>{transaction.title}</td>
 
               <td className={transaction.type}>
@@ -32,6 +37,13 @@ export const TransactionsTable: React.FC = () => {
               <td>
                 {new Intl.DateTimeFormat('pt-BR').format(new Date(transaction.createdAt))}
               </td>
+
+              <td>
+                <button type="button" onClick={() => deleteTransaction(transaction._id)}>
+                  <MdOutlineDeleteForever />
+                </button>
+              </td>
+
             </tr>
           ))}
 

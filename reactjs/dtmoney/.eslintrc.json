@@ -33,7 +33,9 @@
         "quotes":"off",
         "no-unused-vars":"off",
         "no-shadow": "off",
-        "react/jsx-no-constructed-context-values":"off"
+        "react/jsx-no-constructed-context-values":"off",
+        "eslint no-underscore-dangle:":"off",
+        "no-underscore-dangle": [1, { "allowAfterThis": true }]
 
     }
 }
