@@ -18,7 +18,7 @@ export const TransactionsTable: React.FC = () => {
         <tbody>
 
           {transactions.map((transaction) => (
-            <tr key={transaction.id}>
+            <tr key={transaction.title}>
               <td>{transaction.title}</td>
 
               <td className={transaction.type}>
