@@ -18,7 +18,6 @@ export const NewTransactionModal: React.FC<NewTransactionModalProps> = ({ modalI
   const { createTransaction } = useTransactions();
 
   const [type, setType] = useState('deposit');
-
   const [title, setTitle] = useState('');
   const [amount, setAmount] = useState(0);
   const [category, setCategory] = useState('');
@@ -63,6 +62,7 @@ export const NewTransactionModal: React.FC<NewTransactionModalProps> = ({ modalI
           placeholder="Titulo"
           value={title}
           onChange={(e) => setTitle(e.target.value)}
+          required
         />
 
         <input
@@ -99,12 +99,16 @@ export const NewTransactionModal: React.FC<NewTransactionModalProps> = ({ modalI
 
         </TransactionTypeContainer>
 
-        <input
-          type="text"
-          placeholder="Categoria"
-          value={category}
-          onChange={(e) => setCategory(e.target.value)}
-        />
+        <select onChange={(e) => setCategory(e.target.value)} defaultValue="" required>
+          <option value="" disabled>Selecione</option>
+          <option value="Transporte">Transporte</option>
+          <option value="Alimentação">Alimentação</option>
+          <option value="Freelancer">Freelancer</option>
+          <option value="Salário">Salário</option>
+          <option value="Doação">Doação</option>
+          <option value="Imprevistos">Imprevistos</option>
+          <option value="Outros">Outros</option>
+        </select>
 
         <button type="submit">Cadastrar</button>
       </Container>
