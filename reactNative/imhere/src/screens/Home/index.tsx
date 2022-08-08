@@ -1,10 +1,11 @@
 import { Text, View, TextInput, TouchableOpacity } from "react-native";
+import { Participant } from "../../components/Participant";
 import { styles } from "./styles";
 
 export default function Home() {
 	return (
 		<View style={styles.container}>
-			<Text style={styles.eventName}>Hello World</Text>
+			<Text style={styles.eventName}>Nome do evento</Text>
 
 			{/* <Text>{Date.now()}</Text> */}
 
@@ -16,11 +17,15 @@ export default function Home() {
 				/>
 
 				<TouchableOpacity style={styles.button}>
-					<Text style={styles.buttonText}>Submit</Text>
+					<Text style={styles.buttonText}>+</Text>
 				</TouchableOpacity>
 			</View>
-			
 
+			<Participant />
+			<Participant />
+			<Participant />
+			<Participant />
+			
 		</View>
 	);
 }
