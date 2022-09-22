@@ -34,12 +34,23 @@ export function Post({ author, publishedAt, content }) {
 		event.preventDefault()
 
 		setComments([...comments, newCommentText])
-		setNewCommentText('')		
+		setNewCommentText('')
 	}
 
 	function handleNewCommentChange(){
 		setNewCommentText(event.target.value)
 	}
+
+	function deleteComment(commentToDelete){
+		//Imutabilidade
+		const commentsWithoutDeleteOne = comments.filter(comment => {
+			return comment !== commentToDelete
+		})
+		
+		setComments(commentsWithoutDeleteOne);
+	
+	}
+
 
 	return (
 		<article className={styles.post}>
@@ -81,6 +92,8 @@ export function Post({ author, publishedAt, content }) {
 					placeholder="Deixe um comentário:" 
 					onChange={handleNewCommentChange}
 					value={newCommentText}
+					onInvalid={handleNewCommentInvalid}
+					required
 				/>
 
 				<footer>
@@ -90,7 +103,13 @@ export function Post({ author, publishedAt, content }) {
 
 			<div className={styles.commentList}>
 				{comments.map(comment => {
-					return <Comment key={comment} content={comment}/>
+					return (
+						<Comment 
+							key={comment} 
+							content={comment} 
+							onDeleteComment={deleteComment}
+						/>
+					)
 				})}
 			</div>
 		</article>
