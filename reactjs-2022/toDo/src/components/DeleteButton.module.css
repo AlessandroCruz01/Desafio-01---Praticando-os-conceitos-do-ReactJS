@@ -1,0 +1,17 @@
+.Container {
+    width: 24px;
+    height: 24px;
+    margin: 12px 15px 27px 16px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: var(--gray300);
+    border-radius: 4px;
+    transition: .5s;
+}
+
+.Container:hover {
+    background-color: var(--gray400);
+    color: var(--danger);
+    transition: .5s;
+}

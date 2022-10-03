@@ -1,0 +1,22 @@
+
+.Input {
+    height: 3.375rem;
+    width: 39.875rem;
+    border-radius: 8px;
+    background: var(--gray500);
+    margin-right: 8px;
+    border: none;
+    padding: 1rem;
+    color: var(--gray300);
+}
+
+.Input:focus {
+    color: var(--gray100);
+}
+
+@media(max-width: 740px){
+    .Input {
+        width: 80%;
+        margin-left: 1rem;
+    }
+}

@@ -1,0 +1,45 @@
+.Container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 4.5rem;
+    background: var(--gray500);
+    border-radius: 8px;
+    border: solid 2px var(--gray400);
+
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+
+    margin-bottom: 0.75rem;
+}
+
+.Container p {
+    color: var(--gray100);
+    margin-left: 52px
+}
+
+.ContainerCheck{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 4.5rem;
+    background: var(--gray500);
+    border-radius: 8px;
+
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+
+    margin-bottom: 0.75rem;
+}
+
+.ContainerCheck p {
+    color: var(--gray300);
+    text-decoration: line-through;
+    margin-left: 52px;
+}
+
+@media(max-width:742px){
+    .Container .ContainerCheck{
+        height: 10%;
+    }
+}

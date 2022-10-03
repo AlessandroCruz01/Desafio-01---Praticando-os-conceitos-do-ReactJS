@@ -1,0 +1,60 @@
+.Article {
+    width: 100vw;
+}
+
+.InputDiv {
+    width: 100%;
+    margin-top: -60px;
+    display: flex;
+    justify-content: center;
+}
+
+.Container{
+    width: 46rem;
+    margin: 4rem auto 0px auto;
+}
+
+.Status {
+    width: 100%;;
+    font-weight: bold;
+    font-size: 1rem;
+
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+}
+
+.Status strong:first-child {
+    color: var(--blue);
+}
+
+.Status strong:last-child {
+    color: var(--purple);
+}
+
+.Status > strong > span {
+    background: var(--gray400);
+    padding: 6px 15px;
+    border-radius: 20px; 
+    color: var(--gray200);
+    margin: 8px;
+}
+
+.ListTasks {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    margin-top:1.5rem;
+}
+
+.ListTasks img {
+    width: 100%;
+}
+
+@media(max-width: 740px){
+    .Container {
+        width: 90%;
+    }
+}
+
